@@ -7,6 +7,7 @@ mongoose.connect('mongodb://localhost:27017/loginsystem');
 
 app.use('/auth', auth);
 
-app.listen('8080', () => {
-  console.log('Server running on port 8080...');
+var port = 8080
+app.listen('port', () => {
+  console.log('Server running on port ' + port);
 });
