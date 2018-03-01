@@ -24,8 +24,8 @@ app.use(bodyParser.urlencoded({
 var url = 'mongodb://localhost:27017/login_system';
 mongoose.connect(url, {}, function (err) {
   if (err) { throw err; } else {
-    console.log("Connection to the Database etablished (" + url + ")")
-    console.log("----------------")
+    console.log("Connection to the Database etablished (" + url + ")");
+    console.log("----------------");
   }
 })
 
