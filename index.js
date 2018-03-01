@@ -2,7 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
 import auth from './auth/route'
-const ObjectId = require('mongoose').Types.ObjectId
+const ObjectId = mongoose.Types.ObjectId;
 //  Models requires
 
 //  Routes requires
