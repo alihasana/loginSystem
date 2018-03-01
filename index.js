@@ -1,11 +1,11 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import bodyParser from 'body-parser'
-import auth from './auth/route'
 const ObjectId = mongoose.Types.ObjectId;
-//  Models requires
-
-//  Routes requires
+//  Models import
+import User from './models/User'
+//  Routes import
+import auth from './auth/route'
 
 let app = express()
 
