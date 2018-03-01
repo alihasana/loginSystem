@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import router from './users/route';
+import auth from './auth/route';
 
 let app = express();
 mongoose.connect('mongodb://localhost/loginsystem);
