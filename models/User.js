@@ -10,18 +10,9 @@ let UserSchema = new Schema({
     required: true,
     lowercase: true
   },
-  hash_password: {
-    type: String,
-    required: true
-  },
-  created: {
-    type: Date,
-    default: Date.now
-  },
-  last_updated: {
-    type: Date,
-    default:Date.now
-  }
+  hash_password: { type: String, required: true },
+  created: { type: Date, default: Date.now },
+  last_updated: { type: Date, default:Date.now }
 });
 
 UserSchema.methods.comparePasswords = function(password) {
