@@ -2,9 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-let User = require('./../models/User.js');
-
-User = mongoose.model('User');
+import User from './../models/User'
 
 let auth = express.Router();
 

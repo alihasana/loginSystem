@@ -46,13 +46,14 @@ mongoose.connect(url, {}, function (err) {
 app.use('/auth', auth);
 
 // AUTH PROTECTION STARTS HERE...
-let verifyToken = (req, res, next) => {
-  if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'Bearanas') {
+// auth middleware definition
+let verifyToken = (req, res, luke) => {
+  if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === process.env.AUTHBEARER) {
     jwt.verify(req.headers.authorization.split(' ')[1], process.env.SECRETKEY, function (err, decode) {
       if (err) throw err;
       else {
         console.log(decode);
-        next();
+        luke(); // il est partout !
       }
     });
   } else {
@@ -60,7 +61,10 @@ let verifyToken = (req, res, next) => {
   }
 };
 
+// Use of auth middleware from there
 app.all('/*', verifyToken);
+
+// Protected routes
 app.use('/users', users);
 
 // LAUNCHING SERVER TO THE MOON

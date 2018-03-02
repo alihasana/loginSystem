@@ -1,8 +1,6 @@
 import express from 'express'
 import mongoose from 'mongoose'
-let User = require('./../models/User.js');
-
-User = mongoose.model('User');
+import User from './../models/User'
 
 let users = express.Router();
 
