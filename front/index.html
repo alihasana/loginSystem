@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login System</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+  <script src="//unpkg.com/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-app="app" class="pb-3">
+  <!-- ### NAVIGATION ### -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark z-depth-1 mb-3">
+    <div class="container">
+      <a class="navbar-brand" href="https://simplon.co/" target="_blank">
+        <img src="https://simplon.co/wp-content/themes/DiviChildV2/images/logo.png" width="30" height="30" class="d-inline-block align-top"
+          alt=""> Simplon.co
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-item nav-link" ui-sref="login" ui-sref-active="active">Login</a>
+          <a class="nav-item nav-link" ui-sref="register" ui-sref-active="active">Register</a>
+          <a class="nav-item nav-link" ui-sref="users" ui-sref-active="active">User List</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- ### FIN NAVIGATION ### -->
+
+  <ui-view></ui-view>
+</body>
+</html>
