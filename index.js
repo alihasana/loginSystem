@@ -47,13 +47,14 @@ app.use('/auth', auth);
 
 // AUTH PROTECTION STARTS HERE...
 // auth middleware definition
-let verifyToken = (req, res, luke) => {
+let verifyToken = (req, res, next) => {
   if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === process.env.AUTHBEARER) {
     jwt.verify(req.headers.authorization.split(' ')[1], process.env.SECRETKEY, function (err, decode) {
       if (err) throw err;
       else {
         console.log(decode);
-        luke(); // il est partout !
+        req.quezac = decode;
+        next(); // il est partout !
       }
     });
   } else {
@@ -69,4 +70,4 @@ app.use('/users', users);
 
 // LAUNCHING SERVER TO THE MOON
 let port = process.env.PORT || 8080;
-app.listen(port, () => console.log('Server running on port: ' + port + '...'));
+app.listen(port, () => console.log('App listen on port: ' + port + ' ...'));
