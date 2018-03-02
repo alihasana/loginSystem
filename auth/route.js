@@ -18,7 +18,7 @@ auth.post('/login', (req, res) => {
           res.status(401).json({ message: 'Authentication failed. Wrong password.' })
         } else {
           jwt.sign({ email: user.email, _id: user._id }, process.env.SECRETKEY, function (err, result) {
-            let newToken = new Token({token: result})
+            let newToken = new Token({token: result});
             newToken.save(function (err, user) {
               if (err) {
                 return res.status(400).send({ message: err })
