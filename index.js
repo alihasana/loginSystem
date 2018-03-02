@@ -62,7 +62,7 @@ let verifyToken = (req, res, luke) => {
 };
 
 // Use of auth middleware from there
-app.all('/*', verifyToken);
+app.use(verifyToken);
 
 // Protected routes
 app.use('/users', users);
