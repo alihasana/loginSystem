@@ -1,8 +1,7 @@
 import mongoose from 'mongoose'
 import bcrypt from 'bcrypt'
-Schema = mongoose.Schema;
 
-let UserSchema = new Schema({
+let UserSchema = new mongoose.Schema({
   email: {
     type: String,
     unique: true,
@@ -19,4 +18,4 @@ UserSchema.methods.comparePasswords = function(password) {
   return bcrypt.compareSync(password, this.hash_password);
 }
 
-mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
