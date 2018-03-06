@@ -1,8 +1,9 @@
 # loginSystem
 Login System with JWT and NodeJS
 
-'npm install' , then create your '.env' file 
+Make sure that you mangodb is running in your system
 
+'npm install' , then remane file .env-example to .env
 
 You have use Postman as a Front end
 
